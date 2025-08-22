@@ -1,4 +1,4 @@
-# sistema-bibliotecario
+# Sistema Bibliotecario
 
 Sistema CRUD para gerenciamento de livros utilizando Vue 3 no frontend, Node.js/Express no backend e Supabase como banco de dados e autenticação.
 
@@ -13,6 +13,8 @@ Sistema CRUD para gerenciamento de livros utilizando Vue 3 no frontend, Node.js/
 - **Validações**: Campos obrigatórios e formatos
 - **Mensagens**: Feedback de sucesso/erro para o usuário
 - **Interface Responsiva**: Design moderno e intuitivo
+- **Filtragem de livros** por título, autor ou ano, facilitando a localização rápida de registros.  
+- **Ordenação da lista** (ex.: mais recentes, ordem alfabética), oferecendo maior organização na visualização.
 
 ## 🛠️ Tecnologias
 
@@ -28,7 +30,7 @@ Sistema CRUD para gerenciamento de livros utilizando Vue 3 no frontend, Node.js/
 - **Supabase** - Banco PostgreSQL + Autenticação
 - **CORS** - Middleware para permitir requisições cross-origin
 
-## 🗂️ Estrutura do Projeto
+<!-- ## 🗂️ Estrutura do Projeto
 
 ```
 sistema-livros/
@@ -49,7 +51,7 @@ sistema-livros/
 │   ├── server.js           # Arquivo principal do servidor
 │   └── package.json
 └── README.md
-```
+``` -->
 
 ## ⚙️ Configuração do Supabase
 
@@ -110,8 +112,8 @@ No painel do Supabase, vá em Settings > API e copie:
 
 ### 1. Clonar o repositório
 ```bash
-git clone <seu-repositorio>
-cd sistema-livros
+git clone https://github.com/Robson-tech/sistema-bibliotecario.git
+cd sistema-bibliotecario
 ```
 
 ### 2. Configurar Backend
@@ -154,7 +156,7 @@ Iniciar aplicação:
 npm run dev
 ```
 
-## 📡 API Endpoints
+<!-- ## 📡 API Endpoints
 
 ### Autenticação
 - `POST /auth/login` - Login do usuário
@@ -180,10 +182,10 @@ Content-Type: application/json
   "quantidade_paginas": 208,
   "ano_publicacao": 1899
 }
-```
+``` -->
 # 📸 Telas da Aplicação
 
-Esta seção apresenta as telas principais do **Sistema de Livros**, descrevendo suas funcionalidades e incluindo imagens ilustrativas.
+Esta seção apresenta as telas principais do **Sistema Bibliotecario**, descrevendo suas funcionalidades e incluindo imagens ilustrativas.
 
 ---
 
@@ -263,13 +265,13 @@ Um modal de confirmação é exibido para garantir que o usuário realmente dese
 
 ---
 
-## 🔒 Segurança
+<!-- ## 🔒 Segurança
 
 - **Autenticação JWT**: Tokens seguros via Supabase
 - **Row Level Security**: Usuários só acessam seus dados
 - **Validação**: Frontend e backend validam dados
 - **CORS**: Configurado para permitir apenas origens autorizadas
-- **Sanitização**: Dados sanitizados antes de persistir
+- **Sanitização**: Dados sanitizados antes de persistir -->
 
 ## 🧪 Testes
 
@@ -281,7 +283,7 @@ Para testar a aplicação:
 4. **Validação**: Teste campos obrigatórios e formatos
 5. **Autenticação**: Teste logout e acesso não autorizado
 
-## 📦 Scripts Disponíveis
+<!-- ## 📦 Scripts Disponíveis
 
 ### Frontend (client/)
 - `npm run dev` - Servidor de desenvolvimento
@@ -301,9 +303,9 @@ Para testar a aplicação:
 
 ### Alterar estilização:
 - Modifique as classes Tailwind CSS nos componentes Vue
-- Customize cores e temas no arquivo de configuração
+- Customize cores e temas no arquivo de configuração -->
 
-## ❗ Solução de Problemas
+<!-- ## ❗ Solução de Problemas
 
 ### Erro de CORS:
 Verifique se o backend está rodando na porta correta e se o CORS está configurado.
@@ -320,7 +322,7 @@ Verifique se as políticas RLS estão configuradas corretamente.
 2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
 3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
 4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
+5. Abra um Pull Request -->
 
 ## 📄 Licença
 
@@ -328,4 +330,10 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 
 ---
 
-**Desenvolvido para exercitar conceitos de Sistemas Distribuídos**
+## 🎥 Demonstração do Sistema
+
+Este projeto foi desenvolvido como parte do *Trabalho 01 da disciplina de Sistemas Distribuídos*, com o objetivo de praticar a criação de um sistema distribuído com autenticação, cadastro e gerenciamento de livros.
+
+A seguir está disponível um vídeo de demonstração, mostrando como foi organizado o projeto e o fluxo completo de uso do sistema — desde o login até as operações de CRUD.
+
+[📺 Clique aqui para ver a demonstração](https://youtu.be/0DrsKGGznRI?feature=shared)
