@@ -1,7 +1,7 @@
 <!-- client/src/App.vue -->
 <template>
   <div id="app" class="min-h-screen bg-gray-50">
-    <nav v-if="isAuthenticated" class="bg-white shadow-sm border-b">
+    <nav v-if="userEmail" class="bg-white shadow-sm border-b">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
           <div class="flex items-center">
@@ -30,7 +30,7 @@
     <div
       v-if="notification.show"
       :class="[
-        'fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 transition-all duration-300',
+        'fixed bottom-4 right-4 p-4 rounded-lg shadow-lg z-50 transition-all duration-300',
         notification.type === 'success' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
       ]"
     >
@@ -40,9 +40,9 @@
 </template>
 
 <script>
-import { computed, reactive, onMounted } from 'vue'
+import { computed, reactive, onMounted, nextTick } from 'vue'
 import { useRouter } from 'vue-router'
-import { authService } from './services/authService'
+import { authService, isAuthenticated, currentUser } from './services/authService'
 
 export default {
   name: 'App',
@@ -55,15 +55,19 @@ export default {
       type: 'success'
     })
 
-    const user = computed(() => authService.getCurrentUser())
-    const isAuthenticated = computed(() => authService.isAuthenticated())
-    const userEmail = computed(() => user.value?.email || '')
+    // const user = computed(() => authService.getCurrentUser())
+    // const isAuthenticated = computed(() => authService.isAuthenticated())
+    const userEmail = computed(() => currentUser.value?.email || '')
 
     const logout = async () => {
       try {
         await authService.logout()
         showNotification('Logout realizado com sucesso!', 'success')
-        router.push('/login')
+        
+        // Use nextTick para garantir que a DOM foi atualizada
+        nextTick(() => {
+          router.push('/login')
+        })
       } catch (error) {
         showNotification('Erro ao fazer logout', 'error')
       }
@@ -90,7 +94,7 @@ export default {
     window.showNotification = showNotification
 
     return {
-      isAuthenticated,
+      // isAuthenticated,
       userEmail,
       logout,
       notification,
