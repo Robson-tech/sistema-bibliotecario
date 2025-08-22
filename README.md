@@ -13,6 +13,8 @@ Sistema CRUD para gerenciamento de livros utilizando Vue 3 no frontend, Node.js/
 - **Validações**: Campos obrigatórios e formatos
 - **Mensagens**: Feedback de sucesso/erro para o usuário
 - **Interface Responsiva**: Design moderno e intuitivo
+- **Filtragem de livros** por título, autor ou ano, facilitando a localização rápida de registros.  
+- **Ordenação da lista** (ex.: mais recentes, ordem alfabética), oferecendo maior organização na visualização.
 
 ## 🛠️ Tecnologias
 
@@ -110,8 +112,8 @@ No painel do Supabase, vá em Settings > API e copie:
 
 ### 1. Clonar o repositório
 ```bash
-git clone <seu-repositorio>
-cd sistema-livros
+git clone https://github.com/Robson-tech/sistema-bibliotecario.git
+cd sistema-bibliotecario
 ```
 
 ### 2. Configurar Backend
@@ -183,7 +185,7 @@ Content-Type: application/json
 ``` -->
 # 📸 Telas da Aplicação
 
-Esta seção apresenta as telas principais do **Sistema de Livros**, descrevendo suas funcionalidades e incluindo imagens ilustrativas.
+Esta seção apresenta as telas principais do **Sistema Bibliotecario**, descrevendo suas funcionalidades e incluindo imagens ilustrativas.
 
 ---
 
@@ -328,4 +330,10 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 
 ---
 
-**Desenvolvido para exercitar conceitos de Sistemas Distribuídos**
+## 🎥 Demonstração do Sistema
+
+Este projeto foi desenvolvido como parte do *Trabalho 01 da disciplina de Sistemas Distribuídos*, com o objetivo de praticar a criação de um sistema distribuído com autenticação, cadastro e gerenciamento de livros.
+
+A seguir está disponível um vídeo de demonstração, mostrando como foi organizado o projeto e o fluxo completo de uso do sistema — desde o login até as operações de CRUD.
+
+[📺 Clique aqui para ver a demonstração](https://youtu.be/0DrsKGGznRI?feature=shared)
