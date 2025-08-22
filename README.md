@@ -330,4 +330,10 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 
 ---
 
-**Desenvolvido para exercitar conceitos de Sistemas Distribuídos**
+## 🎥 Demonstração do Sistema
+
+Este projeto foi desenvolvido como parte do *Trabalho 01 da disciplina de Sistemas Distribuídos*, com o objetivo de praticar a criação de um sistema distribuído com autenticação, cadastro e gerenciamento de livros.
+
+A seguir está disponível um vídeo de demonstração, mostrando como foi organizado o projeto e o fluxo completo de uso do sistema — desde o login até as operações de CRUD.
+
+[📺 Clique aqui para ver a demonstração](https://youtu.be/0DrsKGGznRI?feature=shared)
