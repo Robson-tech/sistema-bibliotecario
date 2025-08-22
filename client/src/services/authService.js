@@ -1,12 +1,16 @@
 // client/src/services/authService.js
+import { ref } from 'vue'
 import axios from 'axios'
 
-const VITE_API_BASE_URL = import.meta.env.VITE_VITE_API_BASE_URL || 'http://localhost:3001'
+const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001'
+
+export const isAuthenticated = ref(!!localStorage.getItem('token'))
+export const currentUser = ref(JSON.parse(localStorage.getItem('user') || 'null'))
 
 class AuthService {
   constructor() {
     this.token = localStorage.getItem('token')
-    this.user = JSON.parse(localStorage.getItem('user') || 'null')
+    // this.user = JSON.parse(localStorage.getItem('user') || 'null')
     
     // Configurar interceptor do axios para incluir token
     axios.interceptors.request.use((config) => {
@@ -39,7 +43,9 @@ class AuthService {
       const { user, session } = response.data
       
       this.token = session.access_token
-      this.user = user
+      // this.user = user
+      isAuthenticated.value = true
+      currentUser.value = user
       
       localStorage.setItem('token', this.token)
       localStorage.setItem('user', JSON.stringify(user))
@@ -76,19 +82,21 @@ class AuthService {
       console.error('Erro ao fazer logout:', error)
     } finally {
       this.token = null
-      this.user = null
+      // this.user = null
+      currentUser.value = null
+
       localStorage.removeItem('token')
       localStorage.removeItem('user')
     }
   }
 
   isAuthenticated() {
-    return !!this.token && !!this.user
+    return !!this.token && !!currentUser
   }
 
-  getCurrentUser() {
-    return this.user
-  }
+  // getCurrentUser() {
+  //   return this.user
+  // }
 
   getToken() {
     return this.token
