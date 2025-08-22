@@ -181,3 +181,151 @@ Content-Type: application/json
   "ano_publicacao": 1899
 }
 ```
+# 📸 Telas da Aplicação
+
+Esta seção apresenta as telas principais do **Sistema de Livros**, descrevendo suas funcionalidades e incluindo imagens ilustrativas.
+
+---
+
+## 🖥️ Telas de Autenticação
+
+### 📌 Descrição:
+As telas de login e cadastro permitem que os usuários acessem e criem suas contas no sistema de forma segura.
+
+#### Tela de Login
+![Tela de Login](telas/LOGIN.png)
+
+#### Tela de Cadastro
+![Tela de Cadastro](telas/CADASTRO.png)
+
+---
+
+## 📊 Dashboard Principal
+
+### 📌 Descrição:
+O dashboard é a tela principal onde o usuário gerencia sua coleção de livros. Ele exibe estatísticas e a lista de livros cadastrados.
+
+### 🔹 Funcionalidades:
+- Exibição de estatísticas (Total de Livros, Páginas, etc.).
+- Campo de busca para encontrar livros por título, autor ou ano.
+- Botão para adicionar um novo livro.
+- Listagem dos livros em formato de cards.
+- Opções para editar ou excluir cada livro.
+
+### 🖼️ Imagens:
+
+#### Dashboard com a biblioteca vazia
+![Dashboard Vazio](telas/HOME.png)
+
+#### Dashboard com livros cadastrados
+![Dashboard com Livros](telas/HOME_LIVROS.png)
+
+---
+
+## 📖 Tela de Adicionar Novo Livro
+
+### 📌 Descrição:
+Formulário para adicionar um novo livro à coleção do usuário.
+
+### 🔹 Funcionalidades:
+- Campo para **Título** do livro.
+- Campo para **Autor Principal**.
+- Campo para **Quantidade de Páginas**.
+- Campo para **Ano de Publicação**.
+- Botões para **Salvar** ou **Cancelar**.
+
+### 🖼️ Imagem:
+![Adicionar Novo Livro](telas/ADD_NOVO_LIVRO.png)
+
+---
+
+## ✏️ Tela de Editar Livro
+
+### 📌 Descrição:
+Permite que o usuário modifique as informações de um livro que já foi cadastrado.
+
+### 🔹 Funcionalidades:
+- Campos pré-preenchidos com as informações atuais do livro.
+- Botão **Atualizar Livro** para salvar as alterações.
+
+### 🖼️ Imagem:
+![Editar Livro](telas/EDITAR_LIVRO.png)
+
+---
+
+## 🗑️ Confirmação de Exclusão
+
+### 📌 Descrição:
+Um modal de confirmação é exibido para garantir que o usuário realmente deseja excluir um livro, evitando remoções acidentais.
+
+### 🖼️ Imagem:
+![Confirmar Exclusão](telas/EXCLUIR_LIVRO.png)
+
+---
+
+## 🔒 Segurança
+
+- **Autenticação JWT**: Tokens seguros via Supabase
+- **Row Level Security**: Usuários só acessam seus dados
+- **Validação**: Frontend e backend validam dados
+- **CORS**: Configurado para permitir apenas origens autorizadas
+- **Sanitização**: Dados sanitizados antes de persistir
+
+## 🧪 Testes
+
+Para testar a aplicação:
+
+1. **Registro**: Crie uma nova conta
+2. **Login**: Faça login com as credenciais
+3. **CRUD**: Teste todas as operações de livros
+4. **Validação**: Teste campos obrigatórios e formatos
+5. **Autenticação**: Teste logout e acesso não autorizado
+
+## 📦 Scripts Disponíveis
+
+### Frontend (client/)
+- `npm run dev` - Servidor de desenvolvimento
+- `npm run build` - Build para produção
+- `npm run preview` - Preview do build
+
+### Backend (server/)
+- `npm start` - Servidor em produção
+- `npm run dev` - Servidor com nodemon (desenvolvimento)
+
+## 🔧 Customização
+
+### Adicionar novos campos:
+1. Atualize a tabela no Supabase
+2. Modifique os modelos no backend
+3. Atualize os formulários no frontend
+
+### Alterar estilização:
+- Modifique as classes Tailwind CSS nos componentes Vue
+- Customize cores e temas no arquivo de configuração
+
+## ❗ Solução de Problemas
+
+### Erro de CORS:
+Verifique se o backend está rodando na porta correta e se o CORS está configurado.
+
+### Erro de autenticação:
+Confirme se as credenciais do Supabase estão corretas no arquivo `.env`.
+
+### Erro de conexão com banco:
+Verifique se as políticas RLS estão configuradas corretamente.
+
+## 📝 Contribuição
+
+1. Fork o projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+
+---
+
+**Desenvolvido para exercitar conceitos de Sistemas Distribuídos**
